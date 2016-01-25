@@ -7,7 +7,7 @@ args <- commandArgs(TRUE)
 
 #function for pulling mysql output and putting into graph on server
 price_graph <- function(ticker){
-stocks <- read.csv(file="/home/mike/mysql_output/stocks_py_date.csv")
+stocks <- read.csv(file="stocks_py_date.csv")
 stock <- stocks[grep(ticker,stocks$Stock),]
 for_graph <- data.frame(Stock=stock$Stock, Price=stock$Price)
 cat('"','/var/www/projects/stocks/images/',ticker,'.jpeg','"',sep="");
